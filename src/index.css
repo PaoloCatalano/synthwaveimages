@@ -373,7 +373,7 @@ Gallery
 }
 
 .image-container .img {
-  height: 10rem;
+  height: 20rem;
   border-radius: 0.2rem;
   transition: var(--transition);
 }

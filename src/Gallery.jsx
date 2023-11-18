@@ -4,13 +4,15 @@ import { useGlobalContext } from "./context";
 
 const url = `https://api.unsplash.com/search/photos/?client_id=${
   import.meta.env.VITE_CLIENT_ID
-}`;
+}&per_page=9`;
 export default function Gallery() {
-  const { searchTerm } = useGlobalContext();
+  const { searchTerm, page } = useGlobalContext();
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["images", searchTerm], //triggers for a re-fetch
+    queryKey: ["images", searchTerm, page], //triggers for a re-fetch
     queryFn: async () => {
-      const { data } = await axios.get(`${url}&query=${searchTerm}`);
+      const { data } = await axios.get(
+        `${url}&query=${searchTerm}&page=${page}`
+      );
 
       return data;
     },

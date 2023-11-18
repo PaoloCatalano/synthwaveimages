@@ -21,6 +21,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const [searchTerm, setSearchTerm] = useState("synthwave");
+  const [page, setPage] = useState("1");
 
   useEffect(() => {
     document.body.classList.toggle("dark-theme", isDarkTheme);
@@ -28,7 +29,14 @@ export const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ isDarkTheme, toggleDarkTheme, searchTerm, setSearchTerm }}
+      value={{
+        isDarkTheme,
+        toggleDarkTheme,
+        searchTerm,
+        setSearchTerm,
+        page,
+        setPage,
+      }}
     >
       {children}
     </AppContext.Provider>
