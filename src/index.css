@@ -74,12 +74,12 @@ html {
   --textColor: var(--dark-mode-text-color);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bgColor: var(--dark-mode-bg-color);
     --textColor: var(--dark-mode-text-color);
   }
-}
+} */
 
 body {
   background-color: var(--bgColor);
